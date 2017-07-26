@@ -1,6 +1,5 @@
-#!/usr/bin/python
 
-from datetime import *
+from datetime import datetime
 
 base = 18500
 dt_begin = datetime.strptime("2016-07-01", "%Y-%m-%d")
