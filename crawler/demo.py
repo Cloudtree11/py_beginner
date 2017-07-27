@@ -1,4 +1,6 @@
 
+# coding=UTF-8
+
 import urllib2
 import cookielib
 
@@ -28,6 +30,8 @@ opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
 urllib2.install_opener(opener)
 response3 = urllib2.urlopen(request)
 print response3.getcode()
+print response3.geturl()
+print response3.info()
 print cj
-#print response3.read()
+print len(response3.read())
 
