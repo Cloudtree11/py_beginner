@@ -1,5 +1,5 @@
 
-# coding=UTF-8
+# -*- coding: UTF-8 -*-
 
 import urllib2, cookielib, re, time
 
@@ -37,7 +37,6 @@ html_raw = http_response.read()
 #f = open('content.html', 'w')
 #f.write(html_raw)
 #f.close()
-#html_regex = re.compile(r"<a href=\"/dog250/article/details/\d+\">")
 html_regex = re.compile(r"\"/dog250/article/details/\d+\">")
 links = []
 
@@ -47,20 +46,25 @@ for link in html_regex.findall(html_raw):
     #print link
     links.append(link)
 
+i = 0
+
 for link in links:
     time.sleep(10)
+    i += 1
     http_response = get_http_response(link)
     html_raw = http_response.read()
     title_regex = re.compile(r"<title>.+?Netfi", re.S)
     title_match = title_regex.search(html_raw)
+    file_name = ""
     if title_match == None:
         print "title match failed"
     else:
         title = title_match.group()
         title = title[7:-8]
-    #with open(file_name, 'w') as f:
-    #    f.write(html_raw)
-        print title
+        file_name = str(i) + ".html"
+        print file_name, title
+        #with open(file_name, 'w') as f:
+        #    f.write(title)
 
 
 
