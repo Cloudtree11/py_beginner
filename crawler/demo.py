@@ -65,11 +65,3 @@ for link in links:
         print file_name, title
         #with open(file_name, 'w') as f:
         #    f.write(title)
-
-
-
-
-
-
-
-

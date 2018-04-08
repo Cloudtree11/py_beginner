@@ -1,7 +1,6 @@
 
 from datetime import datetime
 
-# Begin at 2017-10-30
 base = 18500
 
 def count(d_begin, d_end, total, income):
@@ -19,6 +18,7 @@ def count(d_begin, d_end, total, income):
 
     return total
 
+
 # 2017-07-05 +1000
 total = count("2017-07-05", "2017-10-30", base, 1000)
 # 2017-10-30 +4295
@@ -29,4 +29,3 @@ total = count("2017-11-15", "2018-04-08", total, -4200)
 total = count("2018-04-08", "now", total, 1000)
 
 print "sum is %.2f" % total
-
