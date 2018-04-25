@@ -1,9 +1,6 @@
 
 from datetime import datetime
 
-# Begin at 2017-10-30
-base = 18500
-
 def count(d_begin, d_end, total, income):
     dt_begin = datetime.strptime(d_begin, "%Y-%m-%d")
     if d_end == 'now':
@@ -19,8 +16,12 @@ def count(d_begin, d_end, total, income):
 
     return total
 
+base = 18500
+
+# Begin at 2016-07-01
+total = count("2016-07-01", "2017-07-05", base, 0)
 # 2017-07-05 +1000
-total = count("2017-07-05", "2017-10-30", base, 1000)
+total = count("2017-07-05", "2017-10-30", total, 1000)
 # 2017-10-30 +4295
 total = count("2017-10-30", "2017-11-15", total, 4295)
 # 2017-11-15 -4200
