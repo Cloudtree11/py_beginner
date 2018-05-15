@@ -27,7 +27,9 @@ total = count("2017-10-30", "2017-11-15", total, 4295)
 # 2017-11-15 -4200
 total = count("2017-11-15", "2018-04-08", total, -4200)
 # 2018-04-08 +1000
-total = count("2018-04-08", "now", total, 1000)
+total = count("2018-04-08", "2018-05-15", total, 1000)
+# 2018-05-15 -1235
+total = count("2018-05-15", "now", total, -1235)
 
 print "sum is %.2f" % total
 
